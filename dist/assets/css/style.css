@@ -1,0 +1,195 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #00AAFF, #00FF6C);
+}
+
+
+
+.Button {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1;
+  color: #f0f0f0;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 55%, #e85d4c 100%);
+  border-radius: 12px;
+  box-shadow:
+    0 1px 2px rgb(15 23 42 / 0.08),
+    0 4px 12px rgb(15 23 42 / 0.06);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+.Button:hover {
+  box-shadow:
+    0 2px 4px rgb(15 23 42 / 0.1),
+    0 8px 20px rgb(15 23 42 / 0.08);
+  transform: translateY(-1px);
+}
+.Button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.12);
+}
+.Button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 3px;
+}
+
+.container {
+  background: linear-gradient(180deg, #030172, #680980);
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(216, 212, 216);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.divButton {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  
+}
+.counter {
+  margin: 0;
+  text-align: center;
+}
+
+.bgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0) 50%;
+  outline: 1px solid #ffffff5d;
+  border-radius: 10px;
+  box-shadow: 10px 10px 1px rgba(0, 1, 2, 0.329);
+}
+
+.title {
+  margin: 0;
+  display: inline-block;
+    font-size: 3rem;
+    font-weight: bold;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(255, 255, 255, 0.2) 0%,
+            rgba(255, 255, 255, 0.06) 18%,
+            transparent 42%
+        ),
+        linear-gradient(
+            to top,
+            #c618d6 0%,
+            #d554da 28%,
+            #b10be4 58%,
+            #a53be2 88%,
+            rgba(255, 255, 255, 0.55) 100%
+        ),
+        linear-gradient(#d1d5db00, #d1d5db1a);
+
+    background-size:
+        100% 0%,
+        100% 0%,
+        100% 100%;
+    background-position:
+        0 100%,
+        50% 100%,
+        0 0;
+    background-repeat: no-repeat;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    animation:
+        riempi-bicchiere 3.4s cubic-bezier(0.33, 0.9, 0.32, 1) forwards,
+        superficie 4s ease-in-out infinite alternate 3.4s;
+}
+
+@keyframes riempi-bicchiere {
+    from {
+        background-size:
+            100% 0%,
+            100% 0%,
+            100% 100%;
+    }
+    to {
+        background-size:
+            100% 100%,
+            100% 100%,
+            100% 100%;
+    }
+}
+
+@keyframes superficie {
+    from {
+        background-position:
+            0 100%,
+            50% 100%,
+            0 0;
+    }
+    to {
+        background-position:
+            2% 99.5%,
+            51% 99.2%,
+            0 0;
+    }
+}
+
+.resetButton {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1;
+  color: #f0f0f0;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 55%, #e85d4c 100%);
+  border-radius: 12px;
+  box-shadow:
+    0 1px 2px rgb(15 23 42 / 0.08),
+    0 4px 12px rgb(15 23 42 / 0.06);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+.resetButton:hover {
+  box-shadow:
+    0 2px 4px rgb(15 23 42 / 0.1),
+    0 8px 20px rgb(15 23 42 / 0.08);
+  transform: translateY(-1px);
+}
+.resetButton:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.12);
+}
+.resetButton:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 3px;
+}
