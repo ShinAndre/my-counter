@@ -2,6 +2,9 @@
 
 A simple web counter application built with HTML, CSS, and vanilla JavaScript as a project for the Start2Impact course.
 
+If you want to try the web app : https://my-counter1.netlify.app/
+
+
 **Overview**
 
 The app allows you to:
