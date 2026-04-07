@@ -1,5 +1,4 @@
 "use strict";
-
 // Creiamo dinamicamente gli elementi all interno del DOM;
 
 const addButton = document.createElement("button");
@@ -16,38 +15,55 @@ const resetButton = document.createElement("button");
 
 let numberCount = localStorage.getItem('Counter') || 0;
 
-//Assegnamo una classe agli elementi interessati
 
-counter.className = "counter";
-div.className = "container";
-bgContainer.className = "bgContainer";
-addButton.className = "Button";
-removeButton.className = "Button";
-resetButton.className = "resetButton"
-buttonCounter.className = "divButton";
-title.className = "title"
+const buildHtml = () => {
+  //Assegnamo una classe agli elementi interessati
+  
+  counter.className = "counter";
+  div.className = "container";
+  bgContainer.className = "bgContainer";
+  addButton.className = "Button";
+  removeButton.className = "Button";
+  resetButton.className = "resetButton"
+  buttonCounter.className = "divButton";
+  title.className = "title"
+  
+  // "Appendiamo" tutti gli elementi creati dinamicamente nel DOM
+  
+  div.appendChild(bgContainer);
+  bgContainer.appendChild(title)
+  buttonCounter.appendChild(resetButton)
+  buttonCounter.appendChild(addButton);
+  buttonCounter.appendChild(removeButton);
+  div.appendChild(counter);
+  body.appendChild(div);
+  body.appendChild(buttonCounter);
+  div.appendChild(buttonCounter);
+  bgContainer.appendChild(counter)
+  bgContainer.appendChild(buttonCounter)
+  
+  // Assegnamo un valore agli elementi interessati
+  
+  addButton.textContent = "+";
+  removeButton.textContent = "-";
+  title.textContent = "Counter"
+  resetButton.textContent = "Reset"
+  counter.textContent = numberCount;
+}
 
-// "Appendiamo" tutti gli elementi creati dinamicamente nel DOM
+buildHtml();
 
-div.appendChild(bgContainer);
-bgContainer.appendChild(title)
-buttonCounter.appendChild(resetButton)
-buttonCounter.appendChild(addButton);
-buttonCounter.appendChild(removeButton);
-div.appendChild(counter);
-body.appendChild(div);
-body.appendChild(buttonCounter);
-div.appendChild(buttonCounter);
-bgContainer.appendChild(counter)
-bgContainer.appendChild(buttonCounter)
+const toggleCounter = (method) => {
+    switchCounter(method)
+    localStorage.setItem('Counter', numberCount)
+}
 
-// Assegnamo un valore agli elementi interessati
+const resetCounter = () => {
+    counter.textContent = 0;
+    numberCount = 0;
+    localStorage.removeItem('Counter')
+}
 
-addButton.textContent = "+";
-removeButton.textContent = "-";
-title.textContent = "Counter"
-resetButton.textContent = "Reset"
-counter.textContent = numberCount;
 
 //creiamo una funzione che ci permetta di aumentare o diminuire il valore del nostro counter
 
@@ -69,18 +85,8 @@ const switchCounter = (choose) => {
 
 //aggiungiamo degli eventi per utilizzarli poi dinamicamente all interno dei nostri "pulsanti"
 
-addButton.addEventListener("click", () => {
-  switchCounter("plusCounter");
-  localStorage.setItem('Counter',numberCount)
-});
+addButton.addEventListener("click",() => toggleCounter("plusCounter"));
 
-removeButton.addEventListener("click", () => {
-  switchCounter("minusCounter");
-  localStorage.setItem('Counter',numberCount)
-});
+removeButton.addEventListener("click",() => toggleCounter("minusCounter"));
 
-resetButton.addEventListener("click",() => {
-  counter.textContent = 0;
-  numberCount = 0;
-  localStorage.removeItem('Counter');
-})
+resetButton.addEventListener("click",() => resetCounter())
