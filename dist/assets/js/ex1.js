@@ -14,7 +14,7 @@ const resetButton = document.createElement("button");
 
 //Inizializziamo la nostra variabile del counter
 
-let numberCount = 0;
+let numberCount = localStorage.getItem('Counter') || 0;
 
 //Assegnamo una classe agli elementi interessati
 
