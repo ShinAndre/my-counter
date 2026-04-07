@@ -4,6 +4,7 @@ A simple web counter application built with HTML, CSS, and vanilla JavaScript as
 
 If you want to try the web app : https://my-counter1.netlify.app/
 
+![Alt text](dist/demo.png?raw=true "Optional Title")
 
 **Overview**
 
@@ -21,7 +22,8 @@ The repository contains only the distribution folder:
 
 ```bash
 dist/
-├── main.html
+├── index.html
+├── demo.png
 └── assets
     ├── css
     │   └── style.css
